@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8"/>
@@ -2652,7 +2652,11 @@ function selectOption(opt, wrap) {
   if(clicked) clicked.classList.add('selected');
 
   // Record answer
-  answers[FLOW[step].id] = opt.val;
+  answers[FLOW[step].id] = {
+  pregunta: FLOW[step].q,
+  respuesta: opt.label,
+  valor: opt.val
+};
 
   // Show user bubble
   setTimeout(() => {
